@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>바람을 그리다 &#58; 신윤복&#183;정선</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <!--<link rel="stylesheet" href="./css/style.css">-->
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .section-section1 {
+            width: 100%;
+            height: 100%;
+        }
+        .sheader {
+            width: 100%;
+            height: 1280px;
+            background-color: #000;
+            background-image: url(./img/backg_1.jpg);
+            background-size: cover;
+            background-position: 50% 0%;
+            *background-repeat: no-repeat;
+            position: relative;
+        }
+        .sheader h1 {
+            /* font-size: 58px; */
+            font-size: 3vw;
+            color: #fff;
+            letter-spacing: -0.3vw;
+            position: absolute;
+            bottom: 460px;
+            padding-left: 23.4375%;
+            padding-right: 23.4375%;
+        }
+        .scon {
+            background-color: #000;
+            width: 100%;
+        }
+        .scontent1 {
+            width: 53.125%;
+            margin-right: 23.4375%;
+            margin-left: 23.4375%;
+            color: #fff;
+        }
+        .scontent1ul {
+            width: 100%;
+            height: 1200px;
+        }
+        .scontent1li:first-child {
+            width: 66.666667%;
+            float: left;
+        }
+        .scontent1li:last-child {
+            width: 33.333333%;
+            float: left;
+        }
+        
+        .content1dl {
+            width: 100%;
+        }
+        .content1dt {
+            font-size: 20px;
+            margin-bottom: 80px;
+            font-weight: 500;
+            
+        }
+        .content1dd {
+            font-size: 20px;
+            word-break:keep-all;
+            font-weight: 300;
+            line-height: 32px;
+        }
+
+        .profiledl {
+            width: 100%;
+        }
+        .profiledt {
+            width: 25%;
+            float: left;
+            font-weight: 300;
+            
+        }
+        .profiledd {
+            width: 75%;
+            float: left;
+        }
+
+        .sfooter {background-color: #000;
+            width: 100%;
+            height: 70vh;
+        }
+        .other {
+            display: table;
+            float: left;
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .otherL {background-color: #ff9;}
+        .otherR {background-color: #f99;}
+        .other_kwan {
+            display: table-cell;
+            vertical-align: middle;
+            height: 116px;
+            *background-color: #000;
+            position: relative;
+            z-index: 1;
+        }
+        .other_kwan_name {
+            color: #fff;
+            font-size: 30px;
+            height: 36px;
+        }
+        .design_line {
+            display: inline-block;
+            background-color: #fff;
+            width: 0px;
+            height: 1px;
+        }
+        .gogo {
+            margin-top: 6px;
+            background-color: #fff;
+            color: #000;
+            display: block;
+            width: 200px;
+            height: 50px;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        .gogo_design {
+            display: inline-block;
+            position: relative;
+            width: 196px;
+            height: 46px;
+            border-radius: 30px;
+            border: 2px solid #f00;
+            opacity : 0;
+            margin-left: 0;
+            margin-top: 0;
+            filter: blur(1.5px);
+        }
+        .gogo_div {
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 50px;
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+        
+        }
+        .bg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .otherL .bg .bg_img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(./img/btnimg_2.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+        .otherR .bg .bg_img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(./img/btnimg_3.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+
+         .bg_img {
+            background-size: 100% 100%;            
+        }
+
+        .bg_img{
+            transition: all 300ms ease-out;
+        }
+
+        .other:hover .bg_img {
+            background-size: 120% 120%;
+        } 
+
+        .other:hover .bg_img {
+            transition: all 5000ms ease-out;
+        } 
+
+        .black_box {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        opacity: 0.7;
+    }
+    </style>
+
+    <script type="text/javascript" src="./js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/libs/slick.min.js"></script>
+</head>
+<body>
+    <!--
+    <header>
+
+    </header>
+    -->
+    <section data-role="section" id="section-section1">
+        <div class="sheader">
+            <h1>
+                한양 사람들의 가슴 속에 부는<br />
+                바람을 그린 혜원 신윤복.
+            </h1>
+        </div>
+        <div class="scon">
+            <div class="scontent1">
+                <ul class="scontent1ul">
+                    <li class="scontent1li">
+                        <dl class="content1dl">
+                            <dt class="content1dt">
+                                프로필
+                            </dt>
+                            <dd class="content1dd">
+                                <dl class="profiledl">
+                                    <dt class="profiledt">출생</dt>
+                                    <dd class="profiledd">1758년</dd>
+                                    <dt class="profiledt">시대</dt>
+                                    <dd class="profiledd">조선 후기</dd>
+                                    <dt class="profiledt">본관</dt>
+                                    <dd class="profiledd">고령</dd>
+                                    <dt class="profiledt">이칭/별칭</dt>
+                                    <dd class="profiledd">자 입보, 호 혜원</dd>
+                                    <dt class="profiledt">국적</dt>
+                                    <dd class="profiledd">한국</dd>
+                                    <dt class="profiledt">활동 분야</dt>
+                                    <dd class="profiledd">회화</dd>
+                                    <dt class="profiledt">출생지</dt>
+                                    <dd class="profiledd">미확인</dd>
+                                    <dt class="profiledt">주요 작품</dt>
+                                    <dd class="profiledd">
+                                        혜원전신첩, 19세기<br />
+                                        미인도, 19세기 초<br />
+                                        행려풍속도, 1813
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="scontent1li">
+                        <dl class="content1dl">
+                            <dt class="content1dt">특징</dt>
+                            <dd class="content1dd">
+                                    신윤복은 풍속화 외에도 남종화풍의 산수와 영모 등에서 재능을 보였다. 일찍이 아버지의  화법을 익혔고
+                                    김홍도로 부터 큰 영향을 받았다. 그림과 글씨를 보면 서체나 수파묘, 하엽준법 등에서 
+                                    김홍도의 화풍이 변모된 것을 확인 할 수 있다.<br /><br />
+                                    
+                                    신윤복은 소탈하고 익살이 깃든 서민층의 풍속을 다룬 김홍도와는 다르게 양반층의 풍류나 남녀 간의
+                                    연애, 향락적인 생활을 주로 그렸다. 김홍도는 선이 강하고 빠른 반면 신윤복의 선은 가늘고 유연하다.
+                                    김홍도는 주제를 위해 배경을 생략하는 구성을 즐겼지만 신윤복은 오히려 치밀한 주변 배경 묘사로
+                                    주제를 부각시켰다. 채색도 옅은 갈색으로 되도록 절제한 김홍도에 비해 신윤복은 부드러운 담채 바탕에 
+                                    빨강, 노랑, 파랑의 산뜻하고 또렷한 원색을 즐겨 사용했다.
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="scontent2 scon">
+            <div class="slide_img">
+                <ul>
+
+                </ul>
+            </div>
+            <dlv class="slide_con"></dlv>
+        </div>
+        <div class="sfooter">
+            <div class="other otherL">
+                <div class="other_kwan">
+                    <div class="other_kwan_name">정선관</div>
+                    <div class="design_line"></div>
+                    <a class="gogo">
+                        <div class="gogo_design"></div>
+                        <div class="gogo_div">보러가기</div>
+                    </a>
+                </div>
+                <div class="bg">
+                    <div class="bg_img"></div>
+                    <div class="black_box"></div>
+                </div>
+            </div>
+            <div class="other otherR">
+                <div class="other_kwan">
+                    <div class="other_kwan_name">미디어관</div>
+                    <div class="design_line"></div>
+                    <a class="gogo">
+                        <div class="gogo_design"></div>
+                        <div class="gogo_div">보러가기</div>
+                    </a>
+                </div>
+                <div class="bg">
+                    <div class="bg_img"></div>
+                    <div class="black_box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section data-role="section" id="section-section2">
+            
+    </section>
+    <section data-role="section" id="section-section3">
+                        
+    </section>
+    <section data-role="section" id="section-section4">
+                                    
+    </section>
+-->
+    <!--
+    <footer>
+
+    </footer>
+-->
+    <script type="text/javascript">
+        $('.other').mouseenter(function(){
+            $(this).find('.other_kwan_name').stop().animate({'margin-bottom' : '10px'}, 300);
+            $(this).find('.design_line').stop().animate({'width':'120px'}, 300);
+            $(this).find('.gogo').stop().animate({'margin-top': '20px'}, 300);
+        }).mouseleave(function(){
+            $(this).find('.other_kwan_name').stop().animate({'margin-bottom' : '0px'}, 200);  
+            $(this).find('.design_line').stop().animate({'width':'0px'}, 200);
+            $(this).find('.gogo').stop().animate({'margin-top': '0px'}, 200);         
+        })
+
+        $('.gogo').mouseenter(function(){
+            $(this).stop().animate({'background-color':'#ff0000', 'color':'#ffffff'}, 100);
+            $(this).find('.gogo_design').stop().css({'opacity':1}).animate({'width': '226px', 'height': '66px', 'margin-top':'-10px', 'margin-left':'-15px', 'opacity': 0}, 500);
+        }).mouseleave(function(){
+            $(this).stop().animate({'background-color':'#ffffff','color':'#000000'}, 100);
+            $(this).find('.gogo_design').stop().css({'width': '196px', 'height': '46px', 'margin-top':'0px', 'margin-left':'0px', 'opacity': 0});
+            
+        })
+    </script>
+</body>
+</html>

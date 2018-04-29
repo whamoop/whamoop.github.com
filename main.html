@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>바람을 그리다 &#58; 신윤복&#183;정선</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <!--<link rel="stylesheet" href="./css/style.css">-->
+
+    <style type="text/css">
+        body{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #vui_section {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            top: 0;
+            left: 0;
+            
+        }
+
+        .vui_btn {
+            display: block;
+            width: 70px; 
+            height: 70px;
+            border-radius: 50%;
+            background-color: #ff9999;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 9999;
+            text-align: center;
+            line-height: 70px;
+        }
+
+        .vui_display {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            position: absolute;
+            z-index: 9998;
+            opacity: 0.5;
+            color: #fff;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        #section-section1 {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .main_div {
+            width: 100%;
+            height: 100%;
+        }
+        .select_btn {
+            display: block;
+            position:absolute;
+            width: 33.333333%;
+            height: 100%;
+            cursor: pointer;
+        }
+        .syb_btn {
+            top: 0;
+            left: 0;
+            background-color: #ff9999;
+        }
+        .js_btn {
+            top: 0;
+            left: 33.333333%;
+            background-color: #99ff99;            
+        }
+        .media_btn {
+            top: 0;
+            right: 0;
+            background-color: #9999ff;                        
+        }
+        .kwan_name {
+            display: table;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+        .kwan_name p {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .kwan_con {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            *background-color: #ff9999;
+            z-index: 3;
+        }
+
+        .map_close {
+            display: none;
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            line-height: 30px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+        }
+        .map_close:hover {
+            color: #fff;
+        }
+
+        .map_line {
+            display: block;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
+            left: 50%;
+            transform:translateX(-50%);
+        }
+
+        .map_menu {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 260px;
+            *background-color: #ff999960;
+            overflow: hidden;
+        }
+
+        .map_menu_ul {
+            display: block;
+            width: 300%;
+            height: 100%;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .map_menu_li {
+            display: inline-block;
+            width: 200px;
+            height: 260px;
+            text-align:center;
+            vertical-align: middle;
+            opacity: 0;
+        }
+
+        .map_menu_li:nth-child(2n-1) {
+            margin-top: 260px;
+        }
+        .map_menu_li:nth-child(2n) {
+            margin-top: -780px;
+        }
+
+        .map_menu_li:nth-child(1) {
+            margin-left: 1.5%;
+        }
+        .map_menu_li:nth-child(2) {
+            margin-left: 0.2%;
+        }
+        .map_menu_li:nth-child(3) {
+            margin-left: 2%;
+        }
+        .map_menu_li:nth-child(4) {
+            margin-left: 3%;
+        }
+        .map_menu_li:nth-child(5) {
+            margin-left: 4%;
+        }
+        .map_menu_li:nth-child(6) {
+            margin-left: 0.5%;
+        }
+
+        .map_menu_btn {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            background-color: #000;
+            margin-top: 92px;
+            opacity: 0.6;
+        }
+        .map_menu_img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(./img/btnimg_1.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        .map_menu_con {
+            display: block;
+            width: 200px;
+            height: 60px;
+            position:absolute;
+            bottom: -30px;
+            line-height: 60px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #dddddd;
+            letter-spacing: 1px;
+            opacity: 0;
+        }
+
+        .kwan_img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .black_box30 {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+        }
+        .syb_back_img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(./img/btnimg_1.jpg);
+            background-repeat: no-repeat;
+            background-size: 1920px 1080px;
+            background-position:50% 50%;
+        }
+        .js_back_img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(./img/btnimg_2.jpg);
+            background-repeat: no-repeat;
+            background-size: 1920px 1080px;
+            background-position: 50% 50%;
+        }
+        .media_back_img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(./img/btnimg_3.jpg);
+            background-repeat: no-repeat;
+            background-size: 1920px 1080px;
+            background-position: 50% 50%;
+        }
+
+
+    </style>
+
+    <script type="text/javascript" src="./js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/libs/slick.min.js"></script>
+</head>
+<body>
+    <header>
+        
+    </header>
+
+    <section data-role="section" id="vui_section" class="voice_section">
+        <a class="vui_btn">
+            MIC
+        </a>
+        <div class="vui_display">
+            VUI ANIMATION
+        </div>
+    </section>
+
+
+    <section data-role="section" id="section-section1" class="main_section">
+        <!-- 전시관 선택 -->
+        <div class="main_div">
+            <div class="select_btn syb_btn">
+                <div class="kwan_name">
+                    <p>신윤복관</p>
+                </div>
+                <div class="kwan_con">
+                    <a class="map_close">X</a>
+                    <p class="map_line"></p>
+                    <div class="map_menu">
+                        <ul class="map_menu_ul">
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    소개
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    작품
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    혜원전신첩
+                                </div>
+                            </li>
+                            <li class="map_menu_li" href="info.html">
+                                <a class="map_menu_btn">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    혜원전신첩
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    혜원전신첩
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    혜원전신첩
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kwan_img">
+                    <div class="syb_back_img"></div>
+                    <div class="black_box30"></div>
+                </div>
+            </div>
+            <div class="select_btn js_btn">   
+                <div class="kwan_name">
+                    <p>정선관</p>
+                </div>     
+                <div class="kwan_con">
+                    <a class="map_close">X</a>
+                    <p class="map_line"></p>
+                    <div class="map_menu">
+                        <ul class="map_menu_ul">
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    소개
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    작품
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    소개
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kwan_img">
+                    <div class="js_back_img"></div>
+                    <div class="black_box30"></div>
+                </div>
+            </div>
+            <div class="select_btn media_btn">       
+                <div class="kwan_name">
+                    <p>미디어관</p>
+                </div>    
+                <div class="kwan_con">
+                    <a class="map_close">X</a>
+                    <p class="map_line"></p>
+                    <div class="map_menu">
+                        <ul class="map_menu_ul">
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    소개
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    소개
+                                </div>
+                            </li>
+                            <li class="map_menu_li">
+                                <a class="map_menu_btn" href="info.html">
+                                    <div class="map_menu_img"></div>
+                                </a>
+                                <div class="map_menu_con">
+                                    소개
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kwan_img">  
+                    <div class="media_back_img"></div> 
+                    <div class="black_box30"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 전시관 선택 -->        
+    </section>
+    <section data-role="section" id="section-section2" class="map_section">
+        <!--
+        <div class="map_div">
+            <a class="map_close">X</a>
+            <p class="map_line"></p>
+            <div class="map_menu">
+                <ul class="map_menu_ul">
+                    <li class="map_menu_li">
+                        <a class="map_menu_btn">
+                            <div class="map_menu_img"></div>
+                        </a>
+                        <div class="map_menu_con">
+                            소개
+                        </div>
+                    </li>
+                    <li class="map_menu_li">
+                        <a class="map_menu_btn">
+                            <div class="map_menu_img"></div>
+                        </a>
+                        <div class="map_menu_con">
+                            작품
+                        </div>
+                    </li>
+                    <li class="map_menu_li">
+                        <a class="map_menu_btn">
+                            <div class="map_menu_img"></div>
+                        </a>
+                        <div class="map_menu_con">
+                            혜원전신첩
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    -->
+    </section>
+    <section data-role="section" id="section-section3">
+                        
+    </section>
+    <section data-role="section" id="section-section4">
+                                    
+    </section>
+    
+    <footer>
+
+    </footer>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var isRec = 0;
+
+            $('.vui_btn').click(function(){
+                if(isRec == 0){
+                    $('.vui_display').stop().show();
+                    isRec = 1;
+                } else if(isRec == 1){
+                    $('.vui_display').stop().hide();
+                    isRec = 0;
+                }
+            })
+
+
+            var isOpen = 0;
+
+            $('.syb_btn').click(function(){
+                if(isOpen == 0){
+                    if($('.select_btn').is(':animated')){
+                        return false;
+                    } else {
+                        $('.select_btn').css({'z-index':'0', 'cursor':'default'});
+                        $(this).children('.kwan_name').children('p').stop().hide(200);
+                        $(this).find('.map_close').stop().show(1000);
+                        $(this).children('.kwan_img').children('.black_box30').stop().animate({'opacity':'0.8'});                
+                        $(this).css({'z-index':'3'}).stop().animate({'width': '100%'}, 800, 'easeInOutQuart');
+                        $(this).find('.map_line').stop().delay(300).animate({'width':'100%'});
+                        $(this).find('.map_menu_li').stop().delay(500).animate({'margin-top':0, 'opacity': 1}, 700, 'easeOutQuart');
+                        isOpen = 1;
+                        console.log(isOpen);
+                    }
+                }      
+            })
+
+            $('.js_btn').click(function(){
+                if(isOpen == 0){
+                    if($('.select_btn').is(':animated')){
+                        return false;
+                    } else {
+                        $('.select_btn').css({'z-index':'0', 'cursor':'default'});
+                        $(this).children('.kwan_name').children('p').stop().hide(200);
+                        $(this).find('.map_close').stop().show(1000);              
+                        $(this).children('.kwan_img').children('.black_box30').stop().animate({'opacity':'0.8'}); 
+                        $(this).css({'z-index':'3'}).stop().animate({'width': '100%', 'left': 0}, 800, 'easeInOutQuart');
+                        $(this).find('.map_line').stop().delay(300).animate({'width':'100%'});
+                        $(this).find('.map_menu_li').stop().delay(500).animate({'margin-top':0, 'opacity': 1}, 700, 'easeOutQuart');
+                        isOpen = 1;
+                        console.log(isOpen);
+                    } 
+                }     
+            })
+
+            $('.media_btn').click(function(){
+                if(isOpen == 0){
+                    if($('.select_btn').is(':animated')){
+                        return false;
+                    } else {
+                        $('.select_btn').css({'z-index':'0'});
+                        $(this).children('.kwan_name').children('p').stop().hide(200);
+                        $(this).find('.map_close').stop().show(1000);              
+                        $(this).children('.kwan_img').children('.black_box30').stop().animate({'opacity':'0.8'});                           
+                        $(this).css({'z-index':'3'}).stop().animate({'width': '100%'}, 800, 'easeInOutQuart');
+                        $(this).find('.map_line').stop().delay(300).animate({'width':'100%'});
+                        $(this).find('.map_menu_li').stop().delay(500).animate({'margin-top':0, 'opacity': 1}, 700, 'easeOutQuart');
+                        isOpen = 1;
+                        console.log(isOpen);
+                    } 
+                }     
+            })
+
+
+            
+
+            $('.syb_btn').find('.map_close').click(function(){
+                $(this).stop().hide(1000);
+                $(this).parents('.select_btn').children('.kwan_name').children('p').stop().show(1000);
+                $(this).parents('.select_btn').find('.black_box30').stop().animate({'opacity':'0.5'});
+                $(this).parents('.select_btn').stop().animate({'width':'33.333333%'}, 1000, 'easeOutQuart');
+                $(this).parents('.select_btn').find('.map_line').stop().delay(200).animate({'width':'1px'});
+                $(this).parents('.select_btn').find('.map_menu_li:odd').stop().animate({'margin-top':'260px', 'opacity': 0}, 700, 'easeOutQuart');
+                $(this).parents('.select_btn').find('.map_menu_li:even').stop().animate({'margin-top':'-780px', 'opacity': 0}, 700, 'easeOutQuart');
+                $('.select_btn').css({'cursor':'pointer'});                
+                isOpen = 0;
+            })
+
+            $('.js_btn').find('.map_close').click(function(){
+                $(this).stop().hide(1000);
+                $(this).parents('.select_btn').children('.kwan_name').children('p').stop().show(1000);
+                $(this).parents('.select_btn').find('.black_box30').stop().animate({'opacity':'0.5'});
+                $(this).parents('.select_btn').stop().animate({'width':'33.333333%', 'left':'33.333333%'}, 1000, 'easeOutQuart');
+                $(this).parents('.select_btn').find('.map_line').stop().delay(200).animate({'width':'1px'});
+                $(this).parents('.select_btn').find('.map_menu_li:odd').stop().animate({'margin-top':'260px', 'opacity': 0}, 700, 'easeOutQuart');
+                $(this).parents('.select_btn').find('.map_menu_li:even').stop().animate({'margin-top':'-780px', 'opacity': 0}, 700, 'easeOutQuart');
+                $('.select_btn').css({'cursor':'pointer'});                
+                isOpen = 0;
+            })
+
+            $('.media_btn').find('.map_close').click(function(){
+                $(this).stop().hide(1000);
+                $(this).parents('.select_btn').children('.kwan_name').children('p').stop().show(1000);
+                $(this).parents('.select_btn').find('.black_box30').stop().animate({'opacity':'0.5'});
+                $(this).parents('.select_btn').stop().animate({'width':'33.333333%'}, 1000, 'easeOutQuart');
+                $(this).parents('.select_btn').find('.map_line').stop().delay(200).animate({'width':'1px'});
+                $(this).parents('.select_btn').find('.map_menu_li:odd').stop().animate({'margin-top':'260px', 'opacity': 0}, 700, 'easeOutQuart');
+                $(this).parents('.select_btn').find('.map_menu_li:even').stop().animate({'margin-top':'-780px', 'opacity': 0}, 700, 'easeOutQuart');
+                $('.select_btn').css({'cursor':'pointer'});                
+                isOpen = 0;
+            })
+
+            
+            function toCenterObj1(_section, _box){
+                var topMargin = _section.height()/2 - _box.height()/2;
+                _box.css({'top':topMargin + 'px'});
+            }
+            function toCenterObj2(_section, _box){
+                var topMargin = _section.height()/2 - _box.height()/2 + 30;
+                _box.css({'top':topMargin + 'px'});
+            }
+
+            var winResize = function(){
+                toCenterObj1($('.kwan_con'), $('.map_line'));
+                toCenterObj2($('.kwan_con'), $('.map_menu'));
+            }
+
+            $(window).resize(winResize);
+    
+            $(window).trigger('resize');
+
+
+
+            $('.map_menu_btn').mouseenter(function(){
+                $(this).stop().animate({'width':'196px', 'height':'196px', 'margin-top': 0, 'opacity':1}, 700, 'easeOutCirc');
+                $(this).parents('.map_menu_li').find('.map_menu_con').stop().animate({'bottom': 0, 'opacity': 1}, 500, 'easeOutCirc');
+                $(this).find('.map_menu_img').stop().animate({'opacity': 1}, 800, 'easeOutCirc');
+            })
+
+            $('.map_menu_btn').mouseleave(function(){
+                $(this).stop().animate({'width':'12px', 'height':'12px', 'margin-top': '92px', 'opacity':'0.6'}, 700, 'easeOutCirc');
+                $(this).parents('.map_menu_li').find('.map_menu_con').stop().animate({'bottom': '-30px', 'opacity': 0}, 600, 'easeOutCirc');
+                $(this).find('.map_menu_img').stop().animate({'opacity': 0}, 800, 'easeOutCirc');
+            })
+
+        });
+
+    </script>
+</body>
+</html>
