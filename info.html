@@ -214,7 +214,99 @@
             height: 100%;
             background-color: #000;
         opacity: 0.7;
-    }
+        }
+
+
+        .scontent2 {
+            display: block;
+            position: relative;
+            width: 100%;
+
+        }
+
+        .slide_btn {
+            display: block;
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            padding-top: 20%;
+        }
+
+        .slide_btn a {
+            display: block; 
+            width: 38px;
+            height: 38px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 9px;
+            text-align: center;
+            line-height: 40px;
+            z-index: 9999;
+        }
+
+        .prev {
+            position: absolute;
+            left: 5%;
+        }
+        .next {
+            position: absolute;
+            right: 5%;
+        }
+
+
+        .slide_img{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide_ul {
+            display: block;
+            width: 400%;
+            position: relative;
+            text-align: center;
+            margin-left: 0%;
+        }
+
+        .slide_li {
+            float: left;
+            width: 12%;
+            margin: 0 6.5%;
+        }
+
+        .slide_li img {
+            width: 100%;
+        }
+
+        .slide_con {
+            display: block;
+            color: #fff;
+            width: 53.125%;
+            margin-top: 30px;
+            margin-right: 23.4375%;
+            margin-left: 23.4375%;}
+
+        
+
+        .slide_content {
+            display: none;
+            
+            
+        }
+        .con_sel {display: block;}
+        .con_sub {
+            display: block;
+            font-size: 30px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 8px;
+            
+        }
+        .con_con {display: block;
+            padding: 20px 5% 150px;
+        }
     </style>
 
     <script type="text/javascript" src="./js/libs/jquery.min.js"></script>
@@ -288,12 +380,79 @@
             </div>
         </div>
         <div class="scontent2 scon">
+            <div class="slide_btn">
+                <a class="prev">PREV</a>
+                <a class="next">NEXT</a>
+            </div>
             <div class="slide_img">
-                <ul>
-
+                <ul class="slide_ul">
+                    <li class="slide_li slide_sel" number="1">
+                        <img src="./img/pic1.jpg" alt="연소답청">
+                    </li>
+                    <li class="slide_li" number="2">
+                        <img src="./img/pic2.jpg" alt="쌍검대무">
+                    </li>
+                    <li class="slide_li" number="3">
+                        <img src="./img/pic3.jpg" alt="단오풍정">
+                    </li>
+                    <li class="slide_li" number="4">
+                        <img src="./img/pic4.jpg" alt="이부탐춘">
+                    </li>
                 </ul>
             </div>
-            <dlv class="slide_con"></dlv>
+            <div class="slide_con">
+                <div class="con1 slide_content con_sel">
+                    <h2 class="con_sub">연소답청</h2>
+                    <p class="con_con">
+                            조선왕조의 후기문화가 황금기를 이루고 있던 진경시대에 서울장안의 귀족생활은 아마 가장 호사를 극하였을 것이다. 따라서 귀문자제(貴門子弟)들의 행락(行樂)도 어지간히 극성스러웠을 듯한데 이 그림은 그 한 단면을 보여 주는 것이라 할 수 있겠다. 진달래꽃 피는 봄철이 되자 이 협기(俠氣: 남자다운 기상) 만만한 반가(班家: 양반집안)의 자제들은 청루(靑樓: 기생집)를 벗어나서 간화답청(看花踏靑: 꽃을 보고 푸르름을 밞음)의 야유(野遊)를 계획한 모양이다. 저희끼리만 가면 무슨 재미가 있겠는가. 분명히 제가 탄다고 끌어내었을 말 위에는 기생이 하나씩 올라타 있다.<br/><br/>
+
+                            남존여비(男尊女卑)의 엄격한 신분사회에서 더구나 천민인 기생이 이와 같이 무엄할 수는 없는 일이지만 이미 그녀들의 포로가 되어 노예의 직임을 영광으로 생각하는 이런 건달들에게는 예외일 수밖에 없을 것이다. 이들의 옷차림은 장안에서 둘째가라면 서러워할 만큼 온갖 멋을 다 부리고 있으니, 보라색과 옥색 천으로 발 굵게 누빈 저고리에 향낭(香囊: 향주머니, 이때는 향수를 뿌리는 것이 아니라 향주머니를 찼다.)을 달아 차고 홍록(紅綠)의 갖은 주머니를 긴 띠 매어 치레하며, 행전은 짧게 치고 중치막의 앞 두 폭을 뒤로 잡아매어서 뒤폭만 꼬리로 늘이어 걸음마다 나풀거리게 하고 있다.<br/><br/>
+                            
+                            속없는 이 사람들, 말 탄 기생에게 시중을 드느라고 담배 붙여 대령하며, 구종(驅從: 말을 모는 시종, 마부)되기 자원하여 갓 벗어 마부 주고 마부 벙거지를 제가 쓰고서 검은 띠 허벅대님 매고 말고삐를 잡고 있다. 난처한 것은 구종이다. 차마 상전의 갓을 대신 쓰지는 못하고서 고삐 대신 갓 잡고 헛채찍 맨상투에 심통이 가뜩 나서 비슥비슥 뒤만 따라간다.<br/><br/>
+                            
+                            한 친구는 시간에 늦었던지 갓 벗어 짊어지고 옷자락에 바람 일구며 동자구종(童子驅從)을 급히 몰아 달려오는데, 말 탄 기생의 초록 장옷도 깃발처럼 뒤로 나부낀다. 암벽에는 진달래인 듯 분홍꽃을 가득 피운 나무들이 군데군데 있고 구름 같은 기생의 트레머리에 그 꽃가지가 꽂혔으며 물빛으로 갈라놓은 삼거리 주변에는 청태점(靑苔點)이 분분(紛紛)하여 답청(踏靑)이 실감된다.
+                    </p>
+                </div>
+                <div class="con2 slide_content">
+                    <h2 class="con_sub">쌍검대무</h2>
+                    <p class="con_con">세력 있는 귀족이 장악원(掌樂院)의 악공(樂工)들과 가무에 능한 기생을 불러다가 즐기는 장면이다. 악공과 기생의 수효로 보아 이 놀이가 보통 규모는 아닌데, 이를 즐기는 사람들은 오직 주인 대감과 그의 자제낭관(子弟郞官: 자제와 부하 관리)인 듯하니 일가의 세도가 어지간한 모양이다.<br /><br />
+
+                            혹시 혜원을 키워 준 어느 풍류 재상집에서의 한 때인지도 모르겠다. 화면 구성에 있어서 일체의 배경을 거부하고 검무하는 광경만 전면에 가득 채운 대담성을 보였으나, 주제 표현에 조금도 군색함이 드러나지 않으니 이는 인물의 포치(布置: 분포하여 배치함)를 성공적으로 이끌었기 때문이라 하겠다.<br /><br />
+                            
+                            시각의 초점이 되는 검무기(劍舞妓: 칼춤 추는 기생)들은 의상에서 청홍(靑紅)의 강렬한 대조를 보이면서 화면을 압도하는데, 주인을 비롯한 악공들이 이를 중심으로 둘러앉음으로써 화면의 비중은 평형을 이룬다. 그런데 검무기의 날렵한 동작에서 오는 율동감은 관객들의 도취된 몸짓과 악공들의 신바람나는 연주에 혼연 일치를 보여 아연 활기를 띤다.<br /><br />
+                            
+                            이렇게 놀이에 참석한 인물들의 심리를 꿰뚫어 순간의 동작을 화폭에 그대로 옮겨 담을 수 있다는 것은 아무리 화가의 예리한 안목이라 하더라도 그리 쉽지 않은 일이다. 따라서 작자 혜원이 이런 세계에 얼마나 익숙했던가를 짐작할 수 있는데, 인물들이 하나같이 극도로 세련된 차림을 보이는 것도 혜원의 주변을 보는 듯하여 흥미롭다.
+                            </p>
+                </div>
+                <div class="con3 slide_content">
+                    <h2 class="con_sub">단오풍정</h2>
+                    <p class="con_con">이 그림은 단옷날 추천(鞦韆: 그네타기)놀이를 나온 한 떼의 여인네들이 시냇가에 그네를 매고 냇물에 몸을 씻으며 즐기는 장면을 묘사한 것이다. 그넷줄을 드리울만한 거목이 있고 맑은 물이 굽이쳐 흐르는 곳이라면 당시의 서울에서야 얼마든지 있었을 것이다. 지금의 정릉(貞陵)이나 성북동(城北洞) 골짜기는 물론이고 삼청동(三淸洞)이나 인왕산(仁王山) 계곡을 비롯하여 남산(南山)이나 낙산(駱山) 주변의 여러 골짜기들이 이런 놀이에 적합했을 테니 말이다.<br /><br />
+
+                            여기가 어느 곳인지는 모르겠으나, 당시로서는 퍽 깊은 계곡이어서 인적이 끊어진 후미진 곳이었기에 여인네들이 마음 놓고 의복을 훌훌 벗어 던지고 냇물에 들어가서 물놀이를 즐길 수 있었을 것이다. 그러나 산에는 산에 사는 사람들이 있다. 바위틈에 숨어든 동자승 둘이서 이 기막힌 풍경에 희희낙락 즐거워 어쩔 줄 몰라 하니 민망하기 짝이 없다.<br /><br />
+                            
+                            그래서 혜원은 짐짓 화면의 초점을 딴 곳으로 옮기려고 그네 뛰는 여인에게 화려한 의상(衣裳)을 입히고, 머리 손질하는 여인에게는 엄청나게 큰 다리머리를 모두 풀어놓게 한 모양이다. 다홍치마에 반회장 노랑 저고리만으로도 지극히 선정적인 분위기를 자아내는데, 백설 같은 속곳들이 반 넘어 내 보이는 것은 반라의 여인들에게서보다 훨씬 더 짙은 감정을 느끼게 한다.<br /><br />
+                            
+                            앉은키보다도 더 큰 다리머리에서도 당시 사람들은 이와 같은 기분을 느낄 수 있었는지 모르겠다. 계집종인 듯한 여인이 유방을 드러내 놓은 채로 옷보따리를 이고 오는 것으로써 화면은 상하의 연결이 이루어져서 혼연(渾然)한 생동감을 불러일으킨다.
+                    </p>
+                </div>
+                <div class="con4 slide_content">
+                    <h2 class="con_sub">이부탐춘</h2>
+                    <p class="con_con">
+                            아티스트
+                            신윤복(申潤福)
+                            국적 조선
+                            출생 18세기
+                            종류
+                            한국화
+                            기법
+                            지본채색
+                            크기
+                            28.2 x 35.6 cm
+                            소장처
+                            간송미술관
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="sfooter">
             <div class="other otherL">
@@ -361,6 +520,69 @@
             $(this).find('.gogo_design').stop().css({'width': '196px', 'height': '46px', 'margin-top':'0px', 'margin-left':'0px', 'opacity': 0});
             
         })
+        
+        var slideNum = 0;
+
+        $('.prev').click(function(){
+            if(slideNum == 0){
+                console.log(slideNum);
+            } else {
+                if(slideNum == 1){
+                    $('.slide_ul').stop().animate({'margin-left':'0%'});
+                    $('.slide_content').removeClass('con_sel');
+                    $('.con1').addClass('con_sel');
+                    slideNum = 0;
+                    console.log(slideNum);
+                } else {
+                    if(slideNum == 2){
+                        $('.slide_ul').stop().animate({'margin-left':'-100%'});
+                        $('.slide_content').removeClass('con_sel');
+                        $('.con2').addClass('con_sel');
+                        slideNum = 1;
+                        console.log(slideNum);
+                    } else {
+                        if(slideNum == 3){
+                            $('.slide_ul').stop().animate({'margin-left':'-200%'});
+                            $('.slide_content').removeClass('con_sel');
+                            $('.con3').addClass('con_sel');
+                            slideNum = 2;
+                            console.log(slideNum);
+                        }
+                    }
+                }
+            }
+        })
+
+        $('.next').click(function(){
+            if(slideNum == 0){
+                $('.slide_ul').stop().animate({'margin-left':'-100%'});
+                $('.slide_content').removeClass('con_sel');
+                $('.con2').addClass('con_sel');
+                slideNum = 1;
+                console.log(slideNum);
+            } else {
+                if(slideNum == 1){
+                    $('.slide_ul').stop().animate({'margin-left':'-200%'});
+                    $('.slide_content').removeClass('con_sel');
+                    $('.con3').addClass('con_sel');
+                    slideNum = 2;
+                    console.log(slideNum);
+                } else {
+                    if(slideNum == 2){
+                        $('.slide_ul').stop().animate({'margin-left':'-300%'});
+                        $('.slide_content').removeClass('con_sel');
+                        $('.con4').addClass('con_sel');
+                        slideNum = 3;
+                        console.log(slideNum);
+                    } else {
+                        if(slideNum == 3){
+                            console.log(slideNum);
+                        }
+                    }
+                }
+            }
+        })
+
     </script>
 </body>
 </html>
